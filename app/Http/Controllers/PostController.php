@@ -10,7 +10,8 @@ class PostController extends Controller
     // GET /api/posts → Get all posts
     public function index()
     {
-        return response()->json(Post::all(), 200);
+        $data = Post::with('company')->get();
+        return response()->json($data, 200);
     }
 
     // POST /api/posts → Create a new post

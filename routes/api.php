@@ -27,3 +27,4 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanc
 
 Route::apiResource('companies', CompanyController::class);
 Route::apiResource('posts', PostController::class);
+Route::get('/post', [PostController::class, 'index']);
